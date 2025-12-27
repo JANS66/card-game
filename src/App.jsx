@@ -81,6 +81,21 @@ export default function App() {
   const [flippedCards, setFlippedCards] = useState([])
   const [disableClicks, setDisableClicks] = useState(false)
 
+  React.useEffect(() => {
+    if (cards.length > 0 && cards.every(card => card.isMatched)) {
+      setTimeout(() => {
+        alert(`🎉 You win! Congratulations!`)
+      }, 300)
+    }
+  }, [cards])
+
+  const resetGame = () => {
+    const newCards = shuffleArray(generateCards())
+    setCards(newCards)
+    setFlippedCards([])
+    setDisableClicks(false)
+  }
+  
   return (
     <div>
       <h1>Memory Game</h1>
@@ -93,6 +108,7 @@ export default function App() {
           />
         ))}
       </div>
+      <button onClick={resetGame}>Restart Game</button>
     </div>
   )
 }
