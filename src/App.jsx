@@ -29,7 +29,13 @@ export default function App() {
   }
 
   const handleClick = id => {
-    console.log(`Clicked card:`, id)
+    setCards(previousCards =>
+      previousCards.map(card =>
+        card.id === id && !card.isMatched
+          ? {...card, isFlipped: !card.isFlipped}
+          : card
+      )
+    )
   }
 
   const [cards, setCards] = React.useState(() => shuffleArray(generateCards()))
