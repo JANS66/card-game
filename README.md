@@ -1,16 +1,53 @@
-# React + Vite
+# Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun, interactive Memory Card Game built with React. Flip cards to find matching pairs and challenge your memory! This project features a dark theme and is fully responsive for mobile, tablet, laptop, and desktop.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Flip cards to find matching pairs
+* Only two cards can be flipped at a time
+* Matches stay revealed; non-matches flip back automatically
+* Tracks game completion and shows a win alert
+* Restart button to shuffle and reset the game
+* Dark theme and modern styling
+* Fully responsive layout for all devices
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React (functional components and hooks)
+* CSS Grid for responsive layout
+* useState and useEffect for game logic
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+2. Navigate to the project folder
+3. Install dependencies using `npm install`
+4. Start the development server using `npm start`
+5. Open `http://localhost:3000` in your browser
+
+## Usage
+
+* Click on cards to flip them
+* Find pairs of matching cards
+* The game ends when all pairs are matched
+* Click "Restart Game" to start a new shuffled game
+
+## Folder Structure
+
+```
+src/
+├── components/
+│   └── Card.jsx          # Card component
+├── App.jsx               # Main app component
+├── App.css               # Dark-themed responsive CSS
+└── main.jsx              # React entry point
+```
+
+## Screenshots
+
+![Demo Screenshot](screenshot.png)
+
+## License
+
+This project is open source and available under the MIT License.
