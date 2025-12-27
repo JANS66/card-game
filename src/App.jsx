@@ -1,4 +1,6 @@
 import React from "react"
+import Card from "./components/Card.jsx"
+import "./App.css"
 
 export default function App() {
   const generateCards = () => {
@@ -26,12 +28,24 @@ export default function App() {
       })
   }
 
+  const handleClick = id => {
+    console.log(`Clicked card:`, id)
+  }
+
   const [cards, setCards] = React.useState(() => shuffleArray(generateCards()))
 
   return (
     <div>
       <h1>Memory Game</h1>
-      <pre>{JSON.stringify(cards, null, 2)}</pre>
+      <div className="grid">
+        {cards.map(card => (
+          <Card
+            key={card.id}
+            card={card}
+            handleClick={handleClick}
+          />
+        ))}
+      </div>
     </div>
   )
 }
